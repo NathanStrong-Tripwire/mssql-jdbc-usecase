@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8'
+  compile 'net.sourceforge.jtds:jtds:1.2.+'
+  runtime 'com.microsoft.sqlserver:mssql-jdbc:6.4.0.jre8'
+  runtime 'net.sourceforge.jtds:jtds:1.2.+'
+}
+
+mainClassName = 'SqlServerUseCase'
+version = '1.0'
+
+// Drops Gradle binaries (accessible via gradlew) into the root directory so that
+// Gradle doesn't have to be installed on the machine
+task wrapper(type: org.gradle.api.tasks.wrapper.Wrapper) {
+  gradleVersion = '4.6'
+  jarFile = '.wrapper/gradle-wrapper.jar'
+  description = 'Builds the gradlew wrapper'
+}

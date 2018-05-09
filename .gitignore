@@ -1,0 +1,9 @@
+# local gradle cache
+/.gradle/
+# build artifacts
+/build/
+/out/
+# IntelliJ project files
+*.iml
+*.ipr
+*.iws
