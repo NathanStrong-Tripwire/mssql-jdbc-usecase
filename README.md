@@ -5,10 +5,12 @@ A simple demonstration of the use case we are trying to use.
 The use case should be pretty self-evident from the code alone; however, if you 
 want to actually run this code, there's some legwork to do:
 
-1. Install SQL Server and set it up to allow TLS connections.
+1. Install SQL Server 2016 or newer and set it up to allow TLS connections.
 
    The TLS part is important, because the Microsoft driver requires SSL for any form of
-   authentication that isn't basic sql authentication.
+   authentication that isn't basic sql authentication. SQL Server 2016 or newer is
+   required because older versions do not provide the `DROP TABLE IF EXISTS` 
+   functionality.
    
 2. Create a database that can be accessed by a Windows user, and grant that user
    both CREATE TABLE and DROP TABLE privileges.
